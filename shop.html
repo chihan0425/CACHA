@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>總商品頁</title>
+		<style>
+				@import"CSS/font.css";
+				@import"CSS/topli.css";
+				@import"CSS/shop.css";
+				@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+		</style>
+		<link rel="stylesheet" type="text/css" href="./slick/slick.css"><!-- slider套件 -->
+  		<link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"><!-- slider套件 -->
+		<style>
+		body{
+		margin:0;
+		font-family: 'Noto Sans Japanese', sans-serif;
+		}
+		img {
+		width: 100%;
+		}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="JS/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<script src="JS/scroll.js"></script>
+		<script src="JS/toplist.js"></script>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" >
+		<script src="JS/show.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+		
+
+	</head>
+	<body>
+	
+
+
+		<header>
+			<div class="top-header">
+				<div class="top-logo"><a href="index.html"><img src="images/logo2.png" alt="logo"></a></div>
+				<div class="top-list">
+					<div class="dropdown dropdown1">
+					  <a href="index.html"><div class="dropbtn ">ホーム</div></a><!-- 首頁 -->
+					</div>
+					<div class="dropdown dropdown2 dropdown7">
+					  <a href="shop.html"><div class="dropbtn">グッズ</div></a><!-- 商品 -->
+					</div>
+					<div class="dropdown dropdown3">
+					 <a href="about.html"> <div class="dropbtn">について</div></a><!-- 關於我們 -->
+					  <div class="dropdown-content">
+					   <a id="H2" href="about.html#SS2">關於我們</a>
+					    <a id="H3" href="about.html#SS3">組員介紹</a>
+					    <a id="H4" href="about.html#SS4">地址</a>
+					    <a id="H5" href="about.html#SS5">聯絡我們</a>
+					  </div>
+					</div>
+					
+					
+				
+								 
+								   
+										
+						
+								<div class="dropdown dropdown4">
+								  	<div class="dropbtn dropbtn_lo">
+									<div class="loM" style="display: inline-block;" onclick="show_log()">登入</div>
+												<div style="display: inline-block;">&ensp;|&ensp;</div>
+												<div style="display: inline-block;" onclick="show_sigin2()">註冊</div>
+								</div>
+								</div>
+								<div class="btnshow" onclick="showbar()">
+									<i class="fas fa-bars"></i>
+								</div>
+
+								
+					
+						  
+					
+				</div>
+
+					</div><!--最上面的選單-->
+				</header>
+				<div class="close close-other" onclick="close_other()"><img src="icon/close.png" alt="close"></div><!-- 其他叉叉(關閉) -->
+
+				<!--登入註冊-->
+				<div class="GrayB" ></div><!--半透明黑遮罩-->
+				<div class="login"><!---!!!!!!!!!!!!!!!!登入!!!!!!!!!!!!!!!!!-->
+				<div class="close" onclick="close_log()"><img src="icon/close.png" alt="close"></div><!-- 登入的叉叉(關閉) -->
+				<div class="show-log" onclick="show_login()"></div>
+					<form action="Check(Login).jsp" method="get" class="log-F"><!--登入表單-->
+						<div class="or-W1">or</div>
+						<div class="log-T ">Log in</div>
+						<div class="log-Box" ><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input Radius-Top" name="email" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" name="pwd" id="myInput1" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_log_password()"style="margin-left: 5px;margin-right: 10px;"><span style="color:#FFFFFF;">Show Password</span>
+						</div>
+						<button type="submit" class="btn log-go">Log in</button>
+					</form>
+					<div class="show-sig" onclick="show_sigin()" ><!--按下註冊-->
+					<div class="sigin C-sigin" ><!---!!!!!!!!!!!!!!!!註冊!!!!!!!!!!!!!!!!-->
+						<form action="Check(Register).jsp" method="get"><!--註冊表單-->
+						<div class="or-W2">or</div>
+						<div class="sig-T C-sig-T">Sign up</div>
+						<div class="log-Box sig-Box"><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Name-->
+						        <input type="text" class="form_input Radius-Top" name="name" required oninvalid="setCustomValidity('請輸入姓名');" oninput="setCustomValidity('');" placeholder="Name" />
+						    </div>
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input" name="email" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" name="pwd" id="myInput2" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_sig_password()" style="margin-left: 5px;margin-right: 10px;"><span style="color:#6E7783;">Show Password</span>
+						</div>
+						<button type="submit" class="btn sig-go">Log in</button>
+					</form>
+					</div>
+					</div>
+				</div><!-- 登入註冊結尾 -->
+				
+				<section class="S-1"><!-- 第一部分 -->
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"><!-- 輪播開始 -->
+					  <ol class="carousel-indicators">
+					    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					  </ol>
+					  <div class="carousel-inner">
+					    <div class="carousel-item active ">
+					      <img class="d-block w-100" src="images/G3.jpg" alt="First slide">
+					      <div class="SS1photo"><img src="images/FF-1.png" alt="G"></div>
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="images/G3.jpg" alt="Second slide">
+					       <div class="SS1photo"><img src="images/FF-2.png" alt="G"></div>
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="images/G3.jpg" alt="Third slide">
+					       <div class="SS1photo"><img src="images/FF-4.png" alt="G"></div>
+					    </div>
+					  </div>
+					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					    <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					    <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+					    <span class="sr-only">Next</span>
+					  </a>
+					</div><!-- 輪播結尾 -->
+				</section><!-- 第一部分結束 -->
+				
+				<!-- <div class="S-22"></div> -->
+				<section class="S-2"><!-- 第二部分 -排行榜-->
+				<div class="S2-T">HOT<div class="S2-T2">人気アイテム</div></div>
+					<div class="responsive slider">
+					    <div class="sli-img">
+					      <img src="images/MS1.png">
+					    </div>
+					    <div class="sli-img">
+					      <img src="images/good1.jpg">
+					    </div>
+					    <div class="sli-img">
+					      <img src="images/good2.jpg">
+					    </div>
+					    <div class="sli-img">
+					      <img src="images/ggcrab1.jpg">
+					    </div>
+					    <div class="sli-img">
+					      <img src="images/UK1.png">
+					    </div >
+					    <div class="sli-img">
+					      <img src="images/AM1.png">
+					    </div>
+					  </div>
+				</section>
+				
+				<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+				<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+				<script src="JS/Cslick.js"></script>
+				<div class="Sear"><!--收尋設計開始-->
+						<div class="Sear-T">
+							Search
+						</div>
+						<form action="#" method="get"><!--表單--> <!--搜尋-->
+							<input type="text" placeholder="商品名 ．キーワード" name="search_name" id="Sear-inW" required><!--填寫欄位-->
+							<button type="submit" class="btn" id="Sear-sub" >検索する<i class="fas fa-search" style="margin-left:8px;"></i></button><!--送出-->
+						</form><!--表單結尾-->
+				</div><!--收尋設計結尾-->
+				<section class="S-3"><!-- 第三部分 -->
+				<div class="S32"></div>
+				<div class="S33"><div class="S3-T">ALL<div class="S3-T2">すべての商品</div></div></div>
+				<div class="S3-mu"><!--收尋或是排列順序-->
+					<!-- <div class="S3-order">SORT BY MOST RECENT +</div> -->
+					<div class="dropdown2"><!--排序開始-->
+					  <div onclick="shop_order()" class=" S3-order">SORT BY MOST RECENT +</div>
+					  <div id="shop_order" class="dropdown-content2">
+					    <div onclick="location.href='shop.html'";><a>最新上架</a></div>
+					    <div onclick="location.href='shop.html'";><a>價格由低到高</a></div>
+					    <div onclick="location.href='shop.html'";><a>價格由高到低</a></div>
+					  </div>
+					</div><!--排序結尾-->
+					<div class="S3-search" onmousedown="show_ser()"><!--收尋開始-->
+						Search<i class="fas fa-search" style="margin-left:8px;"></i>
+					</div><!--收尋結尾-->
+				</div><!--收尋或是排列順序結尾-->
+				
+					<div class="S3-FX"><!-- 固定商品開始 -->
+					
+						<div class="good-box"><!-- 一個商品開始 -->
+							<div class="good-img">
+								<div class="good-BG"></div>
+								<img src="images/MS1.png" alt="good"> <!--圖片-->
+								<div class="good-bnt" onclick="location.href='product.html'";><span>もっと見る</span></div>
+							</div>
+							<div class="good-T">リトルワールド</div> <!--kinds-->
+							<div class="good-T2">小小世界</div> <!--subtitle-->
+							<div class="good-Money">NT60</div> <!--price-->
+						</div><!-- 一個商品結尾 -->
+						<div class="good-box"><!-- 一個商品開始 -->
+							<div class="good-img">
+								<div class="good-BG"></div>
+								<img src="images/MS1.png" alt="good"> <!--圖片-->
+								<div class="good-bnt" onclick="location.href='product.html'";><span>もっと見る</span></div>
+							</div>
+							<div class="good-T">リトルワールド</div> <!--kinds-->
+							<div class="good-T2">小小世界</div> <!--subtitle-->
+							<div class="good-Money">NT60</div> <!--price-->
+						</div><!-- 一個商品結尾 -->
+						<div class="good-box"><!-- 一個商品開始 -->
+							<div class="good-img">
+								<div class="good-BG"></div>
+								<img src="images/MS1.png" alt="good"> <!--圖片-->
+								<div class="good-bnt" onclick="location.href='product.html'";><span>もっと見る</span></div>
+							</div>
+							<div class="good-T">リトルワールド</div> <!--kinds-->
+							<div class="good-T2">小小世界</div> <!--subtitle-->
+							<div class="good-Money">NT60</div> <!--price-->
+						</div><!-- 一個商品結尾 -->
+						<div class="good-box"><!-- 一個商品開始 -->
+							<div class="good-img">
+								<div class="good-BG"></div>
+								<img src="images/MS1.png" alt="good"> <!--圖片-->
+								<div class="good-bnt" onclick="location.href='product.html'";><span>もっと見る</span></div>
+							</div>
+							<div class="good-T">リトルワールド</div> <!--kinds-->
+							<div class="good-T2">小小世界</div> <!--subtitle-->
+							<div class="good-Money">NT60</div> <!--price-->
+						</div><!-- 一個商品結尾 -->
+						<div class="good-box"><!-- 一個商品開始 -->
+							<div class="good-img">
+								<div class="good-BG"></div>
+								<img src="images/MS1.png" alt="good"> <!--圖片-->
+								<div class="good-bnt" onclick="location.href='product.html'";><span>もっと見る</span></div>
+							</div>
+							<div class="good-T">リトルワールド</div> <!--kinds-->
+							<div class="good-T2">小小世界</div> <!--subtitle-->
+							<div class="good-Money">NT60</div> <!--price-->
+						</div><!-- 一個商品結尾 -->
+						<div class="good-box"><!-- 一個商品開始 -->
+							<div class="good-img">
+								<div class="good-BG"></div>
+								<img src="images/MS1.png" alt="good"> <!--圖片-->
+								<div class="good-bnt" onclick="location.href='product.html'";><span>もっと見る</span></div>
+							</div>
+							<div class="good-T">リトルワールド</div> <!--kinds-->
+							<div class="good-T2">小小世界</div> <!--subtitle-->
+							<div class="good-Money">NT60</div> <!--price-->
+						</div><!-- 一個商品結尾 -->
+
+
+					</div>
+				</section>
+				<div class="fot">
+				<div class="fot-W">
+					Copyright © 2019 By Chih An,Lin All Rights Reserved<br>
+					Tel：+886-999-587-587 │ E-mail：anny52.kzps@gmail.com
+				</div>
+				<div class="fot-W2">
+				
+				</div>
+				</div>
+				<script src="JS/jquery.nicescroll.js"></script>
+
+			</body>
+		</html>

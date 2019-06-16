@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>會員中心</title>
+		<style>
+				@import"CSS/font.css";
+				@import"CSS/topli.css";
+				@import"CSS/member.css";
+				@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+		</style>
+		<style>
+		body{
+		margin:0;
+		font-family:'Noto Sans Japanese', sans-serif;
+		background-color: #D8E6E7 !important;
+		}
+		img {
+		width: 100%;
+		}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="JS/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<script src="JS/scroll.js"></script>
+		<script src="JS/toplist.js"></script>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" >
+		<script src="JS/show.js"></script>
+		<script src="JS/jquery.nicescroll.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"><!--icon-->
+
+	</head>
+	<body>
+		<header>
+			<div class="top-header">
+				<div class="top-logo"><a href="index.html"><img src="images/logo2.png" alt="logo"></a></div>
+				<div class="top-list">
+					<div class="dropdown dropdown1">
+					  <a href="index.html"><div class="dropbtn ">ホーム</div></a><!-- 首頁 -->
+					</div>
+					<div class="dropdown dropdown2">
+					  <a href="shop.html"><div class="dropbtn">グッズ</div></a><!-- 商品 -->
+					</div>
+					<div class="dropdown dropdown3">
+					 <a href="about.html"> <div class="dropbtn">について</div></a><!-- 關於我們 -->
+					  <div class="dropdown-content">
+					    <a id="H2" href="about.html#SS2">關於我們</a>
+					    <a id="H3" href="about.html#SS3">組員介紹</a>
+					    <a id="H4" href="about.html#SS4">地址</a>
+					    <a id="H5" href="about.html#SS5">聯絡我們</a>
+					  </div>
+					</div>
+					
+					
+					
+								    
+						
+								<div class="dropdown dropdown4">
+								  	<div class="dropbtn dropbtn_lo">
+									<div class="loM" onclick="show_log()">登入&ensp;|&ensp;註冊</div>
+								</div>
+								</div>
+								<div class="btnshow" onclick="showbar()">
+									<i class="fas fa-bars"></i>
+								</div>
+
+			
+					
+				</div>
+
+					</div><!--最上面的選單-->
+				</header>
+				<!--登入註冊-->
+				<div class="GrayB" ></div><!--半透明黑遮罩-->
+				<div class="login"><!---!!!!!!!!!!!!!!!!登入!!!!!!!!!!!!!!!!!-->
+				<div class="close" onclick="close_log()"><img src="icon/close.png" alt="close"></div><!-- 叉叉(關閉) -->
+				<div class="show-log" onclick="show_login()"></div>
+					<form action="" method="get" class="log-F"><!--登入表單-->
+						<div class="or-W1">or</div>
+						<div class="log-T ">Log in</div>
+						<div class="log-Box" ><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input Radius-Top" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" id="myInput1" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_log_password()" style="margin-left: 5px;margin-right: 10px;"><span style="color:#FFFFFF;">Show Password</span>
+						</div>
+						<button type="submit" class="btn log-go">Log in</button>
+					</form>
+					<div class="show-sig" onclick="show_sigin()" ><!--按下註冊-->
+					<div class="sigin C-sigin" ><!---!!!!!!!!!!!!!!!!註冊!!!!!!!!!!!!!!!!-->
+						<form action="" method="get"><!--註冊表單-->
+						<div class="or-W2">or</div>
+						<div class="sig-T C-sig-T">Sign up</div>
+						<div class="log-Box sig-Box"><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Name-->
+						        <input type="text" class="form_input Radius-Top" required oninvalid="setCustomValidity('請輸入姓名');" oninput="setCustomValidity('');" placeholder="Name" />
+						    </div>
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" id="myInput2" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_sig_password()" style="margin-left: 5px;margin-right: 10px;"><span style="color:#6E7783;">Show Password</span>
+						</div>
+						<button type="submit" class="btn sig-go">Log in</button>
+					</form>
+					</div>
+					</div>
+				</div><!-- 登入註冊結尾 -->
+
+				<div class="S-1 col-md-9">
+					<div class="Ck-TTbox"><!-- 選擇優惠券框框 開始-->
+						<div class="S1-T">我的優惠券</div><br>
+						<div class="ticket-box" onclick="TT_Sale(1)"> <!-- 一張優惠券開始 *********************************-->
+								<div class="ticket-T">運費折抵</div>
+								<div class="ticket-FX">
+									<div class="ticket-name"><span id="ticlet_content_1">運費抵用券 30</span>元</div>
+									<div class="ticket-w">可折抵30元之運費</div>
+									<div style="display: none;" id="ticket_ID_1">123456789</div> <!-- 存優惠券的ID編號 -->
+									<div style="display: none;" id="ticket_coupon_money_1">30</div> <!-- 存優惠券的折扣 -->
+								</div>
+						</div><!-- 一張優惠券結尾 ******************************************************-->
+
+						<div class="ticket-box" onclick="TT_Sale(2)"> <!-- 一張優惠券開始 *********************************-->
+								<div class="ticket-T">運費折抵</div>
+								<div class="ticket-FX">
+									<div class="ticket-name"><span id="ticlet_content_2">運費抵用券 60</span>元</div>
+									<div class="ticket-w">可折抵60元之運費</div>
+									<div style="display: none;" id="ticket_ID_2">123456789</div> <!-- 存優惠券的ID編號 -->
+									<div style="display: none;" id="ticket_coupon_money_2">60</div> <!-- 存優惠券的折扣 -->
+								</div>
+						</div><!-- 一張優惠券結尾 ******************************************************-->
+
+						<div class="ticket-box" onclick="TT_Sale(3)"> <!-- 一張優惠券開始 *********************************-->
+								<div class="ticket-T">運費折抵</div>
+								<div class="ticket-FX">
+									<div class="ticket-name"><span id="ticlet_content_3">運費抵用券 60</span>元</div>
+									<div class="ticket-w">可折抵60元之運費</div>
+									<div style="display: none;" id="ticket_ID_3">123456789</div> <!-- 存優惠券的ID編號 -->
+									<div style="display: none;" id="ticket_coupon_money_3">60</div> <!-- 存優惠券的折扣 -->
+								</div>
+						</div><!-- 一張優惠券結尾 ******************************************************-->
+
+						<div class="ticket-box" onclick="TT_Sale(4)"> <!-- 一張優惠券開始 *********************************-->
+								<div class="ticket-T">運費折抵</div>
+								<div class="ticket-FX">
+									<div class="ticket-name"><span id="ticlet_content_4">運費抵用券 20</span>元</div>
+									<div class="ticket-w">可折抵20元之運費</div>
+									<div style="display: none;" id="ticket_ID_4">123456789</div> <!-- 存優惠券的ID編號 -->
+									<div style="display: none;" id="ticket_coupon_money_4">20</div> <!-- 存優惠券的折扣 -->
+								</div>
+						</div><!-- 一張優惠券結尾 ******************************************************-->
+
+						<div class="ticket-box" onclick="TT_Sale(5)"> <!-- 一張優惠券開始 *********************************-->
+								<div class="ticket-T">運費折抵</div>
+								<div class="ticket-FX">
+									<div class="ticket-name"><span id="ticlet_content_5">運費抵用券 30</span>元</div>
+									<div class="ticket-w">可折抵30元之運費</div>
+									<div style="display: none;" id="ticket_ID_5">123456789</div> <!-- 存優惠券的ID編號 -->
+									<div style="display: none;" id="ticket_coupon_money_5">30</div> <!-- 存優惠券的折扣 -->
+								</div>
+						</div><!-- 一張優惠券結尾 ******************************************************-->
+						
+					</div><!-- 選擇優惠券框框 結尾-->
+					<div class="NO-T" onclick="hidden_TT()"><i class="fas fa-times"></i></div>
+					
+					<div class="S1-L "><!--左半部選單 開始-->
+						<div class="M-img"></div><!-- 頭貼-->
+						<div class="M-name">Annie</div><!--使用者名稱-->
+						<div class="M-money"><!-- 點數與紅利 開始-->
+							<div class="MM-M">
+								<div class="MM-img"><img src="icon/money.png" alt="money"></div>
+								<div class="MM-W M-W">650</div>
+							</div>
+							
+						</div><!-- 點數與紅利 結尾-->
+						<div class="FX-btn">
+							<a href="member.html"><div class="S1-btn" ><i class="fas fa-user-cog"></i>&emsp;會員資料</div></a>
+							<a href="order.html"><div class="S1-btn" ><i class="fas fa-check-circle"></i>&emsp;訂單紀錄</div></a>
+							<a href="ticket.html"><div class="S1-btn" ><i class="fas fa-ticket-alt"></i>&emsp;代幣/序號兌換</div></a>
+							<a href="like.html"><div class="S1-btn"><i class="fas fa-heart"></i>&emsp;我的最愛</div></a>
+							<a href="car.html"><div class="S1-btn"><i class="fas fa-shopping-cart"></i>&emsp;購物車</div></a>
+							<a href="Vboard.html"><div class="S1-btn"><i class="fas fa-pencil-alt"></i>&emsp;留言紀錄</div></a>
+						</div>
+					</div><!--左半部選單 結尾-->
+					<style>
+						#che-1:checked ~.car-cho::before {  /*這段CSS也要跑迴圈*/
+							  /*background-color: red;*/
+							  content: "\2714";
+							  color: #6E7783;
+							  display: block;
+							  text-align: center;
+							  line-height: 10px;
+							  font-size: 32px;
+							  border-radius: 3px;
+						}
+						#che-2:checked ~.car-cho::before {
+							  /*background-color: red;*/
+							  content: "\2714";
+							  color: #6E7783;
+							  display: block;
+							  text-align: center;
+							  line-height: 10px;
+							  font-size: 32px;
+							  border-radius: 3px;
+						}
+					</style>
+					<div class="S1-R "><!--右半部內容 開始-->
+						<div class="M-car"><!--購物車 開始-->
+						<form action="" method="" accept-charset="utf-8">
+
+							<div class="S1-T">購物車</div><br>
+							<div class="car-box"> <!-- 一個商品開始 *************************************************************-->
+								<div class="FX-car-one">
+								<label for="che-1"><!--勾選 開始-->
+						            <input type="checkbox" id="che-1" checked name="check_product" onclick="total_ch_money()" value="60">
+						            <div class="car-cho"></div>
+						        </label><!--勾選 結尾-->
+						        <div class="car-img"><img src="images/Good7.jpg" alt="img"></div>
+						        </div>
+								<div class="car-Wbox">
+									<div class="car-T">熱帶水果鳥-(哈密瓜)</div><br>
+									<div class="car-btn">
+										<div class="car-btn-L" onclick="carQ_Re(1)">-</div>
+										<span id="carQ-1">1</span>
+										<div class="car-btn-R" onclick="carQ_Ad(1,3)">+</div>
+									</div>
+									<div class="car-Q">(數量 : 3)</div>
+									<div class="car-Q-money"> NT : <spen id="car_money-1">60</spen> * <spen id="car_chQ-1">1</spen> = <spen id="car_total-1">60</spen></div>
+								</div>
+							</div><!-- 一個商品結尾 *****************************************************************************-->
+
+							<div class="car-box"> <!-- 一個商品開始 *************************************************************-->
+								<div class="FX-car-one">
+								<label for="che-2"><!--勾選 開始-->
+						            <input type="checkbox" id="che-2" checked name="check_product" onclick="total_ch_money()" value="60">
+						            <div class="car-cho"></div>
+						        </label><!--勾選 結尾-->
+						        <div class="car-img"><img src="images/Good7.jpg" alt="img"></div>
+						        </div>
+								<div class="car-Wbox">
+									<div class="car-T">熱帶水果鳥-(哈密瓜)</div><br>
+									<div class="car-btn">
+										<div class="car-btn-L" onclick="carQ_Re(2)">-</div>
+										<span id="carQ-2">1</span>
+										<div class="car-btn-R" onclick="carQ_Ad(2,5)">+</div>
+									</div>
+									<div class="car-Q">(數量 : 5)</div>
+									<div class="car-Q-money"> NT : <spen id="car_money-2">60</spen> * <spen id="car_chQ-2">1</spen> = <spen id="car_total-2">60</spen></div>
+								</div>
+							</div><!-- 一個商品結尾 *****************************************************************************-->
+
+							<div class="car-end-box">
+								<div class="car-ticket-box"><spen style="font-size: 14px;"><i class="fas fa-ticket-alt"></i>&emsp;優惠券</spen>
+									<div class="T-ser-box" onclick="show_TT()" id="check_T_name">使用優惠券</div>
+									<input type="hidden" value="0" id="sale_money_id"><!-- 優惠券編號 -->
+									
+								</div>
+								<div class="car-data-box">
+							        姓名 : <input type="text" class="form_input car-data-w" required oninvalid="setCustomValidity('請輸入姓名');" oninput="setCustomValidity('');" placeholder="Name" value="林芷安"/><br>
+
+							        電話 : <input type="text" class="form_input car-data-w" required oninvalid="setCustomValidity('請輸入手機號碼');" oninput="setCustomValidity('');" placeholder="Phone" value="0963598617"/><br>
+
+							        備註 : <input type="text" class="form_input car-data-w"  oninput="setCustomValidity('');" placeholder="" value=""/><br>
+
+							        地址 : <input type="text" class="form_input car-data-w" required oninvalid="setCustomValidity('請輸入地址');" oninput="setCustomValidity('');" placeholder="Address" value="南投縣南投市光榮東路"/>
+								</div>
+								<div class="detail_box">
+									總金額&emsp; : <span id="all_total"> 0 </span><br>
+									已付金額 : <span id="all_total2">0</span><br>
+									運費&emsp;&emsp; :<span id="freight_fee"> 60</span><br>
+									優惠券&emsp; :<span id="dis_coupon"> 0</span><br>
+									
+								</div>
+								<div class="car-total-box">
+									<div class="car-TT-box">小計 : $ <span id="need_pay">0</span></div>
+									<button type="submit" class="btn car-go">結帳</button>
+								</div>
+							</div>
+							</form>
+						</div><!--購物車 結尾-->
+					</div><!--右半部內容 結尾-->
+				</div>
+				<script>
+					total_ch_money();//頁面一載入就先算錢
+				</script>
+				
+
+			</body>
+		</html>

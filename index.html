@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>首頁</title>
+		<style>
+				@import"CSS/font.css";
+				@import"CSS/topli.css";
+				@import"CSS/Home.css";
+				@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+		</style>
+		<style>
+		body{
+		margin:0;
+		font-family:'Noto Sans Japanese', sans-serif;
+		}
+		img {
+		width: 100%;
+		}
+		
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="JS/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<script src="JS/scroll.js"></script>
+		<script src="JS/toplist.js"></script>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" >
+		<script src="JS/show.js"></script>
+		<script src="JS/jquery.nicescroll.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	</head>
+	<body>
+	
+
+	
+		<header>
+			<div class="top-header">
+				<div class="top-logo"><a href="index.html"><img src="images/logo2.png" alt="logo"></a></div>
+				<div class="top-list">
+					<div class="dropdown dropdown1">
+					  <a href="index.html"><div class="dropbtn ">ホーム</div></a><!-- 首頁 -->
+					</div>
+					<div class="dropdown dropdown2">
+					  <a href="shop.html"><div class="dropbtn">グッズ</div></a><!-- 商品 -->
+					</div>
+					<div class="dropdown dropdown3">
+					 <a href="about.html"> <div class="dropbtn">について</div></a><!-- 關於我們 -->
+					  <div class="dropdown-content">
+					    <a id="H2" href="about.html">關於我們</a>
+					    <a id="H3" href="about.html">組員介紹</a>
+					    <a id="H4" href="about.html">地址</a>
+					    <a id="H5" href="about.html">聯絡我們</a>
+					  </div>
+					</div>
+					
+					
+				
+								 
+								
+							
+								
+								
+								
+										
+
+								<div class="dropdown dropdown4">
+								  	<div class="dropbtn dropbtn_lo">
+									<div class="loM" style="display: inline-block;" onclick="show_log()">登入</div>
+												<div style="display: inline-block;">&ensp;|&ensp;</div>
+												<div style="display: inline-block;" onclick="show_sigin2()">註冊</div>
+								</div>
+								</div>
+								<div class="btnshow" onclick="showbar()">
+									<i class="fas fa-bars"></i>
+								</div>
+
+								
+					
+						  
+					
+				</div>
+
+					</div><!--最上面的選單-->
+				</header>
+				<!--登入註冊-->
+				<div class="GrayB"></div><!--半透明黑遮罩-->
+				<div class="login"><!---!!!!!!!!!!!!!!!!登入!!!!!!!!!!!!!!!!!-->
+				<div class="close" onclick="close_log()"><img src="icon/close.png" alt="close"></div><!-- 叉叉(關閉) -->
+				<div class="show-log" onclick="show_login()"></div>
+					<form action="Check(Login).jsp" method="post" class="log-F" ><!--登入表單-->
+						<div class="or-W1">or</div>
+						<div class="log-T ">Log in</div>
+						<div class="log-Box" ><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input Radius-Top" name="email" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" id="myInput1" name="pwd" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_log_password()" style="margin-left: 5px;margin-right: 10px;"><span style="color:#FFFFFF;">Show Password</span>
+						</div>
+						<button type="submit" class="btn log-go">Log in</button>
+					</form>
+					<div class="show-sig" onclick="show_sigin()" ><!--按下註冊-->
+					<div class="sigin C-sigin" ><!---!!!!!!!!!!!!!!!!註冊!!!!!!!!!!!!!!!!-->
+						<form action="Check(Register).jsp" method="post"><!--註冊表單-->
+						<div class="or-W2">or</div>
+						<div class="sig-T C-sig-T">Sign up</div>
+						<div class="log-Box sig-Box"><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Name-->
+						        <input type="text" class="form_input Radius-Top" name="name" required oninvalid="setCustomValidity('請輸入姓名');" oninput="setCustomValidity('');" placeholder="Name" />
+						    </div>
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input" name="email" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" id="myInput2" name="pwd" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_sig_password()" style="margin-left: 5px;margin-right: 10px;"><span style="color:#6E7783;">Show Password</span>
+						</div>
+						<button type="submit" class="btn sig-go">Log in</button>
+					</form>
+					</div>
+					</div>
+				</div><!-- 登入註冊結尾 -->
+				<div class="S1-box">
+					<div class="close_S1box" onclick="hidS1box()"><img src="icon/close.png" alt="close"></div>
+					<img src="images/CP.png" alt="cp">
+				</div>
+				<div class="S-1">
+					<div class="S1-T"><img src="images/S1-T.png" alt="img"></div>
+					<div  class="S1-T2">C&nbsp;A&nbsp;C&nbsp;H&nbsp;A</div>
+					<div class="S1-line" onclick="S1_line()"></div>
+					<div class="S1-w">
+						い&nbsp;&nbsp;つ&nbsp;&nbsp;で&nbsp;&nbsp;も&nbsp;&nbsp;ど&nbsp;&nbsp;こ&nbsp;&nbsp;で&nbsp;&nbsp;も<br><br>
+						人&nbsp;&nbsp;生&nbsp;&nbsp;を&nbsp;&nbsp;楽&nbsp;&nbsp;し&nbsp;&nbsp;む
+					</div>
+					<div class="S1-egg " onclick="show_coupon()"><img src="images/eggegg.png" alt="egg"></div>
+					<div class="S-1-img ">
+						<img src="images/home-1.jpg" alt="img" class="img-go">
+					</div>
+					
+				</div>
+				<div class="S-2">
+					<div class="S2-FX">
+						<div class="S2-T">NEWS<div class="S2-T2">最新ニュース</div></div>
+						<!-- <div class="S2-news S2-AA">
+							<div class="inn">
+								<img src="images/FF-2.png" alt="img">
+							</div>
+							<div class="innback">
+								123
+							</div>
+						</div> -->
+						<script>
+							function showimgtest(X){
+								if(X==1){
+									$('.inner2').css({'transform':'rotateX(-180deg)'});
+									$('.inner3').css({'transform':'rotateX(-180deg)'});
+									$('.inner4').css({'transform':'rotateX(-180deg)'});
+									document.getElementById("newimg2").src="images/FF-1-1.png";
+									document.getElementById("newimg3").src="images/FF-1-2.png";
+									document.getElementById("newimg4").src="images/FF-1-3.png";
+								}
+								else if(X==2){
+									$('.inner1').css({'transform':'rotateX(-180deg)'});
+									$('.inner3').css({'transform':'rotateX(-180deg)'});
+									$('.inner4').css({'transform':'rotateX(-180deg)'});
+									document.getElementById("newimg1").src="images/FF-2-1.png";
+									document.getElementById("newimg3").src="images/FF-2-2.png";
+									document.getElementById("newimg4").src="images/FF-2-3.png";
+								}
+								else if(X==3){
+									$('.inner1').css({'transform':'rotateX(-180deg)'});
+									$('.inner2').css({'transform':'rotateX(-180deg)'});
+									$('.inner4').css({'transform':'rotateX(-180deg)'});
+									document.getElementById("newimg1").src="images/FF-3-1.png";
+									document.getElementById("newimg2").src="images/FF-3-2.png";
+									document.getElementById("newimg4").src="images/FF-3-4.png";
+								}
+								else if(X==4){
+									$('.inner1').css({'transform':'rotateX(-180deg)'});
+									$('.inner2').css({'transform':'rotateX(-180deg)'});
+									$('.inner3').css({'transform':'rotateX(-180deg)'});
+									document.getElementById("newimg1").src="images/FF-4-1.png";
+									document.getElementById("newimg2").src="images/FF-4-2.png";
+									document.getElementById("newimg3").src="images/FF-4-3.png";
+								}
+							}
+							function hidimgtest(){
+								$('.inner1').css({'transform':'rotateX(0deg)'});
+								$('.inner2').css({'transform':'rotateX(0deg)'});
+								$('.inner3').css({'transform':'rotateX(0deg)'});
+								$('.inner4').css({'transform':'rotateX(0deg)'});
+							}
+							function S1_line(){
+								$('.S1-line').addClass('S1-line2');
+								setTimeout("adeg()",500)
+								setTimeout("deline()",1500)
+
+							}
+							function adeg(){
+								$('.S1-egg').addClass('S1-egg-1');
+								$('.S1-egg').css({'display':'inline-block'});
+							}
+							function deline(){	
+								$('.S1-line').removeClass('S1-line2');
+							}
+							function show_coupon(){
+								$('.GrayB').css({'display':'inline-block'});
+								$('.S1-box').css({'display':'inline-block'});
+							}
+							function hidS1box(){
+								$('.S1-box').css({'display':'none'});
+								$('.GrayB').css({'display':'none'});
+							}
+						</script>
+						<div class="flip-box S2-news AAtest" onmouseover="showimgtest(1)" onmouseout="hidimgtest()" onclick="location.href='shop.html'";>
+						  <div class="flip-box-inner inner1">
+						    <div class="flip-box-front">
+						      <img src="images/FF-1.png" alt="img">
+						    </div>
+						    <div class="flip-box-back">
+						      <img src="images/FF-2.png" alt="img" id="newimg1">
+						    </div>
+						  </div>
+						</div>
+
+						<div class="flip-box S2-news S2-news-left" onmouseover="showimgtest(2)" onmouseout="hidimgtest()" onclick="location.href='shop.html'";>
+						  <div class="flip-box-inner inner2">
+						    <div class="flip-box-front">
+						      <img src="images/FF-2.png" alt="img">
+						    </div>
+						    <div class="flip-box-back">
+						       <img src="images/FF-1.png" alt="img" id="newimg2">
+						    </div>
+						  </div>
+						</div>
+
+						<div class="flip-box S2-news S2-news-top" onmouseover="showimgtest(3)" onmouseout="hidimgtest()" onclick="location.href='shop.html'";>
+						  <div class="flip-box-inner inner3">
+						    <div class="flip-box-front">
+						      <img src="images/FF-5.png" alt="img">
+						    </div>
+						    <div class="flip-box-back">
+						      <img src="images/FF-5.png" alt="img" id="newimg3">
+						    </div>
+						  </div>
+						</div>
+
+						<div class="flip-box S2-news S2-news-left S2-news-top" onmouseover="showimgtest(4)" onmouseout="hidimgtest()" onclick="location.href='shop.html'";>
+						  <div class="flip-box-inner inner4">
+						    <div class="flip-box-front">
+						      <img src="images/FF-4.png" alt="img" >
+						    </div>
+						    <div class="flip-box-back">
+						      <img src="images/FF-4.png" alt="img" id="newimg4">
+						    </div>
+						  </div>
+						</div>
+
+					</div>
+				</div>
+				<div class="S-3">
+					<div class="S3-FX">
+						<div class="S3-T">TOPICS<div class="S3-T2">これらのおもちゃはから来る<br>人生の多くのこと<br>面白い小さなアイデア</div></div>
+						
+						<div class="S3-theme S3-theme1"><!--一個主題開始-->
+							<div class="S3-TW">food</div>
+							<div class="S3-TW2">食品シリーズ</div>
+							<div class="S3-bnt" onclick="location.href='shop.html'";><span>もっと見る</span></div>
+							<div class="S3-img1 S3-img1-2"><img src="images/T1-2.PNG" alt="img"></div>
+						</div><!--一個主題結尾-->
+						<div class="S3-div-W"></div>
+						<div class="S3-theme S3-theme2"><!--一個主題開始-->
+							<div class="S3-TW">Animal</div>
+							<div class="S3-TW2">動物シリーズ</div>
+							<div class="S3-bnt" onclick="location.href='shop.html'";><span>もっと見る</span></div>
+							<div class="S3-img1 S3-img2-1"><img src="images/T2-1.PNG" alt="img"></div>
+							<div class="S3-img1 S3-img2-2"><img src="images/T2-2.PNG" alt="img"></div>
+							<div class="S3-img1 S3-img2-3"><img src="images/T2-3.PNG" alt="img"></div>
+						</div><!--一個主題結尾-->
+						<div class="S3-div-W"></div>
+						<div class="S3-theme S3-theme3"><!--一個主題開始-->
+							<div class="S3-TW">vegetation</div>
+							<div class="S3-TW2">植物シリーズ</div>
+							<div class="S3-bnt" onclick="location.href='shop.html'";><span>もっと見る</span></div>
+							<div class="S3-img1 S3-img3-1"><img src="images/T3-1.PNG" alt="img"></div>
+						</div><!--一個主題結尾-->
+						<div class="S3-div-W S3-div-W2"></div>
+					</div>
+				</div>
+				<a id="gotop">
+					<div class="gotop"><img src="icon/top.png" alt="gotop"></div>
+				</a>
+				<div class="fot">
+				<div class="fot-W">
+					Copyright © 2019 By Chih An,Lin All Rights Reserved<br>
+					Tel：+886-999-587-587 │ E-mail：anny52.kzps@gmail.com
+				</div>
+				<div class="fot-W2">
+				
+				</div>
+				</div>
+				
+			</body>
+		</html>

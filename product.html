@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>商品個別頁</title>
+		<style>
+				@import"CSS/font.css";
+				@import"CSS/topli.css";
+				@import"CSS/product.css";
+				@import"CSS/starTest_2.css";
+		</style>
+		<style>
+		body{
+		margin:0;
+		font-family:'Noto Sans Japanese', sans-serif;
+		}
+		img {
+		width: 100%;
+		}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="JS/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<script src="JS/scroll.js"></script>
+		<script src="JS/toplist.js"></script>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" >
+		<script src="JS/show.js"></script>
+		<link rel="stylesheet" type="text/css" href="./slick/slick.css"><!-- slider套件 -->
+  		<link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"><!-- slider套件 -->
+  		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+		
+
+	</head>
+	<body>
+		<header>
+			<div class="top-header">
+				<div class="top-logo"><a href="index.html"><img src="images/logo2.png" alt="logo"></a></div>
+				<div class="top-list">
+					<div class="dropdown dropdown1">
+					  <a href="index.html"><div class="dropbtn ">ホーム</div></a><!-- 首頁 -->
+					</div>
+					<div class="dropdown dropdown2">
+					  <a href="shop.html"><div class="dropbtn">グッズ</div></a><!-- 商品 -->
+					</div>
+					<div class="dropdown dropdown3">
+					 <a href="about.html"> <div class="dropbtn">について</div></a><!-- 關於我們 -->
+					  <div class="dropdown-content">
+					    <a id="H2" href="about.html#SS2">關於我們</a>
+					    <a id="H3" href="about.html#SS3">組員介紹</a>
+					    <a id="H4" href="about.html#SS4">地址</a>
+					    <a id="H5" href="about.html#SS5">聯絡我們</a>
+					  </div>
+					</div>
+					
+					
+					
+								    
+						
+								<div class="dropdown dropdown4">
+								  	<div class="dropbtn dropbtn_lo">
+									<div class="loM" onclick="show_log()">登入&ensp;|&ensp;註冊</div>
+								</div>
+								</div>
+								<div class="btnshow" onclick="showbar()">
+									<i class="fas fa-bars"></i>
+								</div>
+
+			
+					
+				</div>
+
+					</div><!--最上面的選單-->
+				</header>
+
+				<!--登入註冊-->
+				<div class="GrayB" ></div><!--半透明黑遮罩-->
+				<div class="login"><!---!!!!!!!!!!!!!!!!登入!!!!!!!!!!!!!!!!!-->
+				<div class="close" onclick="close_log()"><img src="icon/close.png" alt="close"></div><!-- 叉叉(關閉) -->
+				<div class="show-log" onclick="show_login()"></div>
+					<form action="" method="get" class="log-F"><!--登入表單-->
+						<div class="or-W1">or</div>
+						<div class="log-T ">Log in</div>
+						<div class="log-Box" ><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input Radius-Top" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" id="myInput1" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_log_password()" style="margin-left: 5px;margin-right: 10px;"><span style="color:#FFFFFF;">Show Password</span>
+						</div>
+						<button type="submit" class="btn log-go">Log in</button>
+					</form>
+					<div class="show-sig" onclick="show_sigin()" ><!--按下註冊-->
+					<div class="sigin C-sigin" ><!---!!!!!!!!!!!!!!!!註冊!!!!!!!!!!!!!!!!-->
+						<form action="" method="get"><!--註冊表單-->
+						<div class="or-W2">or</div>
+						<div class="sig-T C-sig-T">Sign up</div>
+						<div class="log-Box sig-Box"><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Name-->
+						        <input type="text" class="form_input Radius-Top" required oninvalid="setCustomValidity('請輸入姓名');" oninput="setCustomValidity('');" placeholder="Name" />
+						    </div>
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" id="myInput2" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_sig_password()" style="margin-left: 5px;margin-right: 10px;"><span style="color:#6E7783;">Show Password</span>
+						</div>
+						<button type="submit" class="btn sig-go">Log in</button>
+					</form>
+					</div>
+					</div>
+				</div><!-- 登入註冊結尾 -->
+				<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+				<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+				<script src="JS/Cslick.js"></script>
+
+				<div class="yesno_box"><!-- 是否確定轉蛋 開始 -->
+					<div class="yesno_T">注意</div>
+					<div class="yesno_w">※是否確認消耗代幣共<span id="WQM_egg">60</span>點</div>
+					<div class="yesno_btn" onclick="no_btn()">取消</div>
+					<form action="" method="" accept-charset="utf-8">
+						<label for="yes_btn">
+							<button type="submit" id="yes_btn" style="visibility: hidden;"></button>
+							<div class="yesno_btn yesno_btn_yes">確定</div>
+						</label>
+					</form>
+				</div><!-- 是否確定轉蛋 結尾 -->
+				
+					<div class="casa"></div>
+					<div class="test" style="width: 50px;height: 50px;background-color: pink;cursor: pointer;z-index: 100;position: fixed;" onclick="show_eggbox()">test</div>
+					<div class="eggbox"  style="display: none;"><!-- 整個轉蛋的 動畫 -->
+						<div class="casa_w1 "><img src="images/egg1.png" alt="egg_w1"></div>
+						<div class="casa_w2"><img src="images/egg2.png" alt="egg_w2"></div>
+						<div class="casa_egg"><img src="images/caegg.png" alt="egg"></div>
+					</div><!-- 整個轉蛋的 動畫 結尾-->
+					<div class="get_box">
+						<div class="get_box_T">恭喜獲得<div class="egg_close" onclick="close_get_egg()"><i class="fas fa-times"></i></div></div>
+						<div class="get_egg"><!--一個扭蛋的開始-->
+							<div class="get_egg_img"><img src="images/P5-2.png" alt="img"></div>
+							<div class="get_egg_w">櫻桃巧克力殭屍</div>
+						</div><!--一個扭蛋的結尾-->
+						<div class="get_egg"><!--一個扭蛋的開始-->
+							<div class="get_egg_img"><img src="images/P5-2.png" alt="img"></div>
+							<div class="get_egg_w">櫻桃巧克力殭屍</div>
+						</div><!--一個扭蛋的結尾-->
+						<div class="get_egg"><!--一個扭蛋的開始-->
+							<div class="get_egg_img"><img src="images/P5-2.png" alt="img"></div>
+							<div class="get_egg_w">櫻桃巧克力殭屍</div>
+						</div><!--一個扭蛋的結尾-->
+						<div class="get_egg"><!--一個扭蛋的開始-->
+							<div class="get_egg_img"><img src="images/P5-2.png" alt="img"></div>
+							<div class="get_egg_w">櫻桃巧克力殭屍</div>
+						</div><!--一個扭蛋的結尾-->
+					</div>
+
+				<div class="write" style="display: none;"> <!-- 填寫留言開始 -->
+					<div style="text-align: left;">コメント<div class="close_write" onclick="close_write()"><i class="fas fa-times"></i></div></div>
+					<hr>
+					<form name="form1" method="post" action="add.jsp">
+					<div class="write_st">
+						<div class="AS22">
+						<div id="ASB_2" ><!--讓星星亮-->
+						<div id="ASC_2" >
+						  <div class="AS_2_2"><!--星星-->
+						    <div class="AS_3_2"><!--包radio-->
+						      <label for="S1_2">
+						                  <input type="radio" value="0.5" id="S1_2" class="none_2" name="score"  >
+						                  <div class="star1_2" id="SS1_2" onmouseover="show_2('A1')" onmouseout="none_2()" onclick="show_2('B1')"></div></label>
+						      <label for="S2_2">
+						                  <input type="radio" value="1" id="S2_2" class="none_2" name="score" >
+						                  <div class="star2_2" id="SS2_2" onmouseover="show_2('A2')" onmouseout="none_2()" onclick="show_2('B2')"></div></label>
+						      <label for="S3_2">
+						                  <input type="radio" value="1.5" id="S3_2" class="none_2" name="score">
+						                  <div class="star1_2" id="SS3_2" onmouseover="show_2('A3')" onmouseout="none_2()" onclick="show_2('B3')"></div></label>
+						      <label for="S4_2">
+						                  <input type="radio" value="2" id="S4_2" class="none_2" name="score">
+						                  <div class="star2_2" id="SS4_2" onmouseover="show_2('A4')" onmouseout="none_2()" onclick="show_2('B4')"></div></label>
+						      <label for="S5_2">
+						                  <input type="radio" value="2.5" id="S5_2" class="none_2" name="score">
+						                  <div class="star1_2" id="SS5_2" onmouseover="show_2('A5')" onmouseout="none_2()" onclick="show_2('B5')"></div></label>
+						      <label for="S6_2">
+						                  <input type="radio"  value="3" id="S6_2" class="none_2" name="score">
+						                  <div class="star2_2" id="SS6_2" onmouseover="show_2('A6')" onmouseout="none_2()" onclick="show_2('B6')"></div></label>
+						      <label for="S7_2">
+						                  <input type="radio"  value="3.5" id="S7_2" class="none_2" name="score">
+						                  <div class="star1_2" id="SS7_2" onmouseover="show_2('A7')" onmouseout="none_2()" onclick="show_2('B7')"></div></label>
+						      <label for="S8_2">
+						                  <input type="radio" value="4" id="S8_2" class="none_2" name="score" >
+						                  <div class="star2_2" id="SS8_2" onmouseover="show_2('A8')" onmouseout="none_2()" onclick="show_2('B8')"></div></label>
+						      <label for="S9_2">
+						                  <input type="radio" value="4.5" id="S9_2" class="none_2" name="score">
+						                  <div class="star1_2" id="SS9_2" onmouseover="show_2('A9')" onmouseout="none_2()" onclick="show_2('B9')"></div></label>
+						      <label for="S10_2">
+						                  <input type="radio" value="5" id="S10_2" class="none_2" name="score">
+						                  <div class="star2_2" id="SS10_2" onmouseover="show_2('A10')" onmouseout="none_2()" onclick="show_2('B10')"></div></label>
+						    </div>
+						  </div>
+						</div>
+						</div>
+						</div>       
+        						<!--星星結尾-->
+
+
+        <div style="width:350px; margin:0 auto;text-align: left;" class="in_mass">
+          
+          <!--信箱-->
+            <p stlye="padding-bottom:0;color:#6E7783;">email</p>
+            <input type="email" name="mail" value='123@123' readonly='true' required oninvalid="setCustomValidity('請輸入信箱');" oninput="setCustomValidity('');">
+            <br>
+
+          <!--內容-->
+            <p stlye="padding-bottom:0;color:#6E7783;">content</p>
+            <textarea  name="content"  maxlength="86" required oninvalid="setCustomValidity('請輸入評論');" oninput="setCustomValidity('');" style="resize:none;width:300px;height:100px;"></textarea>
+        </div>
+          <!--使用者IP-->
+          <!-- <input type="hidden" name="IP" value="<%=request.getRemoteAddr()%>"> -->
+     
+        <!--...............................-->
+
+      	</div>
+
+
+        <!--送出-->
+            <label for="OKKKK"><div class="OK_massage">OK<input type="submit" id="OKKKK" style="display: none;"></div></label>
+
+      </form>
+					
+	</div><!-- 填寫留言結尾 -->
+
+				<section class="S-1"><!-- 第一部分開始 -->
+						<div class="S1-BOX S1-L"><!-- 左半部開始 -->
+							<div class="S1-img"><!-- 左半部圖片開始 -->
+								<div class="product_imgT slider">
+								    <div class="S1-img-H">
+								    	<img src="images/Good5.jpg" alt="商品圖">
+								    </div>
+								    <div class="S1-img-H">
+								    	<img src="http://fakeimg.pl/400x400" alt="商品圖">
+								    </div>
+								    <div class="S1-img-H">
+								    	<img src="http://fakeimg.pl/400x400" alt="商品圖">
+								    </div>
+								    <div class="S1-img-H">
+								    	<img src="http://fakeimg.pl/400x400" alt="商品圖">
+								    </div>
+								</div>
+								<div class="product_img slider">
+								    <div class="S1-img-F">
+								    	<img src="images/Good5.jpg" alt="商品圖">
+								    </div>
+								    <div class="S1-img-F">
+								    	<img src="http://fakeimg.pl/400x400" alt="商品圖">
+								    </div>
+								    <div class="S1-img-F">
+								    	<img src="http://fakeimg.pl/400x400" alt="商品圖">
+								    </div>
+								    <div class="S1-img-F " >
+								    	<img src="http://fakeimg.pl/400x400" alt="商品圖">
+								    </div>
+								</div>
+							</div><!-- 左半部圖片結尾 -->
+						</div><!-- 左半部結尾 -->
+						<div class="S1-BOX S1-R"><!-- 右半部開始 -->
+							<div class="S1-T">
+								トリピカルズ
+								<div class="S1-TB"></div>
+							</div>
+							<div class="S1-W">
+								<div class="S1-WW">NT : <span id="one_egg_money">60</span><br></div>
+								<div class="S1-WW">點數 : 1<br></div>
+								<div class="S1-WW">商品編號 : 20154756541<br></div>
+								<div class="S1-WW">數量 : <!-- 數量開始 -->
+									<div class="S1-Qbtn">
+										<div class="S1-Qbtn2 S1-Qbtn-L" onclick="quantityRe()">-</div><!-- 減少 -->
+										<div class="S1-Qbtn-W" id="S1-quantuty">1</div><!-- 數量 -->
+										<div class="S1-Qbtn2 S1-Qbtn-R" onclick="quantityAd()">+</div><!-- 增加 -->
+									</div>
+									<div class="S1-QQ">(庫存 : <spen id="QQ-quantity">10</spen>)</div>
+								<br></div><!-- 數量結尾 -->
+								<div class="S1-WW S1-WWW">※ 最多一次轉四顆<br>※ 扭蛋均為隨機出貨不可挑款</div>
+							</div>
+							<hr>
+							<div class="S1-PW"> <!-- 簡介開始-->
+								【發售公司】：T-ARTS <br>
+								【發售日期】：2018年12月<br>
+							</div><!-- 簡介結尾-->
+							<hr>
+							<div class="S1-btn S1-btn-L" onclick="show_yesno()">扭蛋</div>
+							<form action="" method="" accept-charset="utf-8">
+								<label for="ad_goods_like" class="adlabel">
+									<button type="submit" id="ad_goods_like" style="visibility: hidden;"></button>
+									<div class="S1-btn S1-btn-R">加入最愛</div>
+								</label>
+							</form>
+						</div><!-- 右半部結尾 -->
+				</section><!-- 第一部分結尾 -->
+
+				<section class="S-2"><!-- 第二部分開始 -->
+					<div class="S2-open">
+						<div class="S2-line"></div>
+						<div class="S2-open-W">商品評論&#x25BC;</div>
+						<div class="S2-line"></div>
+					</div>
+					<div class="S2-Box"> <!--整個評論版開始-->
+						<div class="S2-box2 S2-L"><!-- 左邊評分條 開始 -->
+							1<div class="S2-score_L"><div class="S2-sc_L_2 " style="width: 20%;"></div></div><br>
+							2<div class="S2-score_L S2-score_L_top"><div class="S2-sc_L_2 " style="width: 90%;"></div></div><br>
+							3<div class="S2-score_L S2-score_L_top"><div class="S2-sc_L_2 " style="width: 40%;"></div></div><br>
+							4<div class="S2-score_L S2-score_L_top"><div class="S2-sc_L_2 " style="width: 80%;"></div></div><br>
+							5<div class="S2-score_L S2-score_L_top"><div class="S2-sc_L_2 " style="width: 50%;"></div></div>
+						</div><!-- 左邊評分條 結尾 -->
+						<div class="S2-box2 S2-R"  ><!-- 右邊評分圈 開始-->
+							<div class="score_T">4.5</div>
+							<div class="score_star">
+								<div class="score_B"><div class="score_A" style="width:50%;"></div></div>
+								<img src="images/st.png" alt="star">
+							</div>
+							<canvas id="canvas_3" class="CA1" width="120" height="120"></canvas>
+    						<canvas id="canvas_4" class="CA2" width="120" height="120"></canvas>
+						</div><!-- 右邊評分圈 結尾-->
+						<script>
+							  function inte2(percent) {
+								    var canvas_1 = document.querySelector('#canvas_3');
+								    var canvas_2 = document.querySelector('#canvas_4');
+								    var ctx_1 = canvas_1.getContext('2d');
+								    var ctx_2 = canvas_2.getContext('2d');
+								    ctx_1.lineWidth = 10;
+								    ctx_1.strokeStyle = "#D8E6E7";
+								    //画底部的灰色圆环
+								    ctx_1.beginPath();
+								    ctx_1.arc(canvas_1.width / 2, canvas_1.height / 2, canvas_1.width / 2 - ctx_1.lineWidth / 2, 0, Math.PI * 2, false);
+								    ctx_1.closePath();
+								    ctx_1.stroke();
+								    if (percent < 0 || percent > 100) {
+								      throw new Error('percent must be between 0 and 100');
+								      return
+								    }
+								    ctx_2.lineWidth = 10;
+								    ctx_2.strokeStyle = "#77AAAD";
+								    var angle = 0;
+								    var timer;
+								    (function draw() {
+								      timer = requestAnimationFrame(draw);
+								      ctx_2.clearRect(0, 0, canvas_2.width, canvas_2.height)
+								      //百分比圓環
+								      ctx_2.beginPath();
+								      ctx_2.arc(canvas_2.width / 2, canvas_2.height / 2, canvas_2.width / 2 - ctx_2.lineWidth / 2, 0, angle * Math.PI / 180, false);
+								      angle=angle+5;//速度
+								      var percentAge = parseInt((angle / 360) * 100)
+								      if (angle > (percent / 100 * 360)) {
+								        percentAge = percent
+								        window.cancelAnimationFrame(timer);
+								      };
+								      ctx_2.stroke();
+								      ctx_2.closePath();
+								      ctx_2.save();
+								      ctx_2.beginPath();
+								      ctx_2.rotate(90 * Math.PI / 180)
+								      ctx_2.closePath();
+								      ctx_2.restore();
+								    })()
+								  }
+								  inte2(50); //這裡輸入幾%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+						</script>
+						<div class="S2-write" onclick="write_message()">
+							コメントを記入&ensp;<i class="fas fa-pencil-alt"></i>
+						</div>
+						
+						<div class="S2-wbox"><!-- 留言板開始 -->
+
+							<hr style="width: 90%;"><!-- 一個留言開始 *********************************-->
+							<div class="message_BOX">
+								<div class="message_top">
+									<div class="message_img"></div>
+									<div class="FX_M">
+										<div class="message_name">a******s</div>
+										<div class="message_star">
+											<div class="score_D"><div class="score_C" style="width:40%;"></div></div>
+											<img src="images/st2.png" alt="star">
+										</div>
+									</div>
+									<div class="message_like"><!-- 一個愛心的開始 -->
+										
+									</div><!-- 一個愛心的結尾 -->
+								</div>
+								<div class="message_bottom">
+									<div class="message_w">
+										嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨
+									</div>
+									<div class="message_w2">
+										2019-87-87
+									</div>
+								</div>
+							</div><!-- 一個留言結尾 ****************************************************-->
+
+							<hr style="width: 90%;"><!-- 一個留言開始 *********************************-->
+							<div class="message_BOX">
+								<div class="message_top">
+									<div class="message_img"></div>
+									<div class="FX_M">
+										<div class="message_name">a******s</div>
+										<div class="message_star">
+											<div class="score_D"><div class="score_C" style="width:40%;"></div></div>
+											<img src="images/st2.png" alt="star">
+										</div>
+									</div>
+									<div class="message_like"><!-- 一個愛心的開始 -->
+										
+									</div><!-- 一個愛心的結尾 -->
+								</div>
+								<div class="message_bottom">
+									<div class="message_w">
+										嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨嗨
+									</div>
+									<div class="message_w2">
+										2019-87-87
+									</div>
+								</div>
+							</div><!-- 一個留言結尾 ****************************************************-->
+
+						</div><!-- 留言板結尾 -->
+					</div><!--整個評論版結尾-->
+				</section><!-- 第二部分結尾 -->
+
+				
+				<footer class="fot">
+				</footer>
+				<script src="JS/jquery.nicescroll.js"></script>
+			</body>
+		</html>

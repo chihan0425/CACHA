@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>會員中心</title>
+		<style>
+				@import"CSS/font.css";
+				@import"CSS/topli.css";
+				@import"CSS/member.css";
+				@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+		</style>
+		<style>
+		body{
+		margin:0;
+		font-family:'Noto Sans Japanese', sans-serif;
+		background-color: #D8E6E7 !important;
+		}
+		img {
+		width: 100%;
+		}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="JS/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<script src="JS/scroll.js"></script>
+		<script src="JS/toplist.js"></script>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" >
+		<script src="JS/show.js"></script>
+		<script src="JS/jquery.nicescroll.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"><!--icon-->
+
+	</head>
+	<body>
+		<header>
+			<div class="top-header">
+				<div class="top-logo"><a href="index.html"><img src="images/logo2.png" alt="logo"></a></div>
+				<div class="top-list">
+					<div class="dropdown dropdown1">
+					  <a href="index.html"><div class="dropbtn ">ホーム</div></a><!-- 首頁 -->
+					</div>
+					<div class="dropdown dropdown2">
+					  <a href="shop.html"><div class="dropbtn">グッズ</div></a><!-- 商品 -->
+					</div>
+					<div class="dropdown dropdown3">
+					 <a href="about.html"> <div class="dropbtn">について</div></a><!-- 關於我們 -->
+					  <div class="dropdown-content">
+					    <a id="H2" href="about.html#SS2">關於我們</a>
+					    <a id="H3" href="about.html#SS3">組員介紹</a>
+					    <a id="H4" href="about.html#SS4">地址</a>
+					    <a id="H5" href="about.html#SS5">聯絡我們</a>
+					  </div>
+					</div>
+					
+					
+					
+								    
+						
+								<div class="dropdown dropdown4">
+								  	<div class="dropbtn dropbtn_lo">
+									<div class="loM" onclick="show_log()">登入&ensp;|&ensp;註冊</div>
+								</div>
+								</div>
+								<div class="btnshow" onclick="showbar()">
+									<i class="fas fa-bars"></i>
+								</div>
+
+			
+					
+				</div>
+
+					</div><!--最上面的選單-->
+				</header>
+				<!--登入註冊-->
+				<div class="GrayB"></div><!--半透明黑遮罩-->
+				<div class="login"><!---!!!!!!!!!!!!!!!!登入!!!!!!!!!!!!!!!!!-->
+				<div class="close" onclick="close_log()"><img src="icon/close.png" alt="close"></div><!-- 叉叉(關閉) -->
+				<div class="show-log" onclick="show_login()"></div>
+					<form action="" method="get" class="log-F"><!--登入表單-->
+						<div class="or-W1">or</div>
+						<div class="log-T ">Log in</div>
+						<div class="log-Box" ><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input Radius-Top" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" id="myInput1" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_log_password()" style="margin-left: 5px;margin-right: 10px;"><span style="color:#FFFFFF;">Show Password</span>
+						</div>
+						<button type="submit" class="btn log-go">Log in</button>
+					</form>
+					<div class="show-sig" onclick="show_sigin()" ><!--按下註冊-->
+					<div class="sigin C-sigin" ><!---!!!!!!!!!!!!!!!!註冊!!!!!!!!!!!!!!!!-->
+						<form action="" method="get"><!--註冊表單-->
+						<div class="or-W2">or</div>
+						<div class="sig-T C-sig-T">Sign up</div>
+						<div class="log-Box sig-Box"><!--包輸入東西的-->
+							<div class="input_control log-line"><!--Name-->
+						        <input type="text" class="form_input Radius-Top" required oninvalid="setCustomValidity('請輸入姓名');" oninput="setCustomValidity('');" placeholder="Name" />
+						    </div>
+							<div class="input_control log-line"><!--Email-->
+						        <input type="email" class="form_input" required oninvalid="setCustomValidity('請輸入正確的email');" oninput="setCustomValidity('');" placeholder="Email" />
+						    </div>
+						    <div class="input_control" style="margin-bottom: 7px;"> <!--密碼-->
+						        <input type="password" class="form_input Radius-Bot" id="myInput2" required oninvalid="setCustomValidity('請設定密碼');" oninput="setCustomValidity('');" placeholder="Password"/>
+						    </div>
+						    <!--顯示密碼-->
+						    <input type="checkbox" onclick="show_sig_password()" style="margin-left: 5px;margin-right: 10px;"><span style="color:#6E7783;">Show Password</span>
+						</div>
+						<button type="submit" class="btn sig-go">Log in</button>
+					</form>
+					</div>
+					</div>
+				</div><!-- 登入註冊結尾 -->
+
+				<div class="S-1 col-md-9">
+					<div class="S1-L "><!--左半部選單 開始-->
+						<div class="M-img"></div><!-- 頭貼-->
+						
+						<div class="M-name">Annie</div><!--使用者名稱-->
+						<div class="M-money"><!-- 點數與紅利 開始-->
+							<div class="MM-M">
+								<div class="MM-img"><img src="icon/money.png" alt="money"></div>
+								<div class="MM-W M-W">650</div>
+							</div>
+							
+						</div><!-- 點數與紅利 結尾-->
+
+						<div class="FX-btn">
+							<a href="member.html"><div class="S1-btn" ><i class="fas fa-user-cog"></i>&emsp;會員資料</div></a>
+							<a href="order.html"><div class="S1-btn" ><i class="fas fa-check-circle"></i>&emsp;訂單紀錄</div></a>
+							<a href="ticket.html"><div class="S1-btn" ><i class="fas fa-ticket-alt"></i>&emsp;代幣/序號兌換</div></a>
+							<a href="like.html"><div class="S1-btn"><i class="fas fa-heart"></i>&emsp;我的最愛</div></a>
+							<a href="car.html"><div class="S1-btn"><i class="fas fa-shopping-cart"></i>&emsp;購物車</div></a>
+							<a href="Vboard.html"><div class="S1-btn"><i class="fas fa-pencil-alt"></i>&emsp;留言紀錄</div></a>
+						</div>
+					</div><!--左半部選單 結尾-->
+					<div class="S1-R "><!--右半部內容 開始-->
+						
+
+						<div class="M-order"><!--訂單資料 開始-->
+							<div class="S1-T">訂單紀錄</div><br>
+							<div class="order-box"><!--一筆訂單 開始********************************************-->
+								<div class="order-Top">
+									訂單編號 : <span>1065874682</span>
+									<div class="order-Top-box">
+										狀態 : 未接單<br>
+										<span class="order-Top-W2">下單日期 : <span>2019/05/24</span></span>
+									</div>
+								</div>
+								<div class="order-P"><!-- 一個商品開始-.................................. -->
+									<div class="P-name">熱帶水果鳥-(哈密瓜)</div>
+									<div class="P-money">NT : 60*2 = 120</div>
+									<hr style="background-color: #9DC3C1;">
+								</div><!-- 一個商品結尾.................................................... -->
+								<div class="order-P"><!-- 一個商品開始 -->
+									<div class="P-name">熱帶水果鳥-(哈密瓜)</div>
+									<div class="P-money">NT : 60*2 = 120</div>
+									<hr style="background-color: #9DC3C1;">
+								</div><!-- 一個商品結尾 -->
+								<div class="order-P"><!-- 一個商品開始 -->
+									<div class="P-name">熱帶水果鳥-(哈密瓜)</div>
+									<div class="P-money">NT : 60*2 = 120</div>
+									<!-- <hr style="background-color: #9DC3C1;"> -->
+								</div><!-- 一個商品結尾 -->
+								<div class="order-Bottpm">
+									<div class="order-detail">
+										姓名 : <span>林芷安</span><br>
+										電話 : <span>0963598617</span><br>
+										備註 : <span></span><br>
+										地址 : <span>南投縣南投市光榮東路</span>
+									</div>
+									<div class="order-total">
+										&emsp;總金額 :  <span>360</span><br>
+										已付金額 :  <span>360</span><br>
+										&emsp;&emsp;運費 :  60<span></span><br>
+										&emsp;優惠券 :  <span></span><br>
+										<b>應付金額 :  <span>420</span></b>
+									</div>
+								</div>
+							</div><!--一筆訂單 結尾**************************************-->
+							<div class="order-box"><!--一筆訂單 開始********************************************-->
+								<div class="order-Top">
+									訂單編號 : <span>1065874682</span>
+									<div class="order-Top-box">
+										狀態 : 未接單<br>
+										<span class="order-Top-W2">下單日期 : <span>2019/05/24</span></span>
+									</div>
+								</div>
+								<div class="order-P"><!-- 一個商品開始-.................................. -->
+									<div class="P-name">熱帶水果鳥-(哈密瓜)</div>
+									<div class="P-money">NT : 60*2 = 120</div>
+									<hr style="background-color: #9DC3C1;">
+								</div><!-- 一個商品結尾.................................................... -->
+								<div class="order-P"><!-- 一個商品開始 -->
+									<div class="P-name">熱帶水果鳥-(哈密瓜)</div>
+									<div class="P-money">NT : 60*2 = 120</div>
+									<hr style="background-color: #9DC3C1;">
+								</div><!-- 一個商品結尾 -->
+								<div class="order-P"><!-- 一個商品開始 -->
+									<div class="P-name">熱帶水果鳥-(哈密瓜)</div>
+									<div class="P-money">NT : 60*2 = 120</div>
+									<!-- <hr style="background-color: #9DC3C1;"> -->
+								</div><!-- 一個商品結尾 -->
+								<div class="order-Bottpm">
+									<div class="order-detail">
+										姓名 : <span>林芷安</span><br>
+										電話 : <span>0963598617</span><br>
+										備註 : <span></span><br>
+										地址 : <span>南投縣南投市光榮東路</span>
+									</div>
+									<div class="order-total">
+										&emsp;總金額 :  <span>360</span><br>
+										已付金額 :  <span>360</span><br>
+										&emsp;&emsp;運費 :  60<span></span><br>
+										&emsp;優惠券 :  <span></span><br>
+										<b>應付金額 :  <span>420</span></b>
+									</div>
+								</div>
+							</div><!--一筆訂單 結尾**************************************-->
+							<div class="order-box"><!--一筆訂單 開始********************************************-->
+								<div class="order-Top">
+									訂單編號 : <span>1065874682</span>
+									<div class="order-Top-box">
+										狀態 : 未接單<br>
+										<span class="order-Top-W2">下單日期 : <span>2019/05/24</span></span>
+									</div>
+								</div>
+								<div class="order-P"><!-- 一個商品開始-.................................. -->
+									<div class="P-name">熱帶水果鳥-(哈密瓜)</div>
+									<div class="P-money">NT : 60*2 = 120</div>
+									<hr style="background-color: #9DC3C1;">
+								</div><!-- 一個商品結尾.................................................... -->
+								<div class="order-P"><!-- 一個商品開始 -->
+									<div class="P-name">熱帶水果鳥-(哈密瓜)</div>
+									<div class="P-money">NT : 60*2 = 120</div>
+									<hr style="background-color: #9DC3C1;">
+								</div><!-- 一個商品結尾 -->
+								<div class="order-P"><!-- 一個商品開始 -->
+									<div class="P-name">熱帶水果鳥-(哈密瓜)</div>
+									<div class="P-money">NT : 60*2 = 120</div>
+									<!-- <hr style="background-color: #9DC3C1;"> -->
+								</div><!-- 一個商品結尾 -->
+								<div class="order-Bottpm">
+									<div class="order-detail">
+										姓名 : <span>林芷安</span><br>
+										電話 : <span>0963598617</span><br>
+										備註 : <span></span><br>
+										地址 : <span>南投縣南投市光榮東路</span>
+									</div>
+									<div class="order-total">
+										&emsp;總金額 :  <span>360</span><br>
+										已付金額 :  <span>360</span><br>
+										&emsp;&emsp;運費 :  60<span></span><br>
+										&emsp;優惠券 :  <span></span><br>
+										<b>應付金額 :  <span>420</span></b>
+									</div>
+								</div>
+							</div><!--一筆訂單 結尾**************************************-->
+						</div><!--訂單資料 結尾-->
+
+
+		
+
+					</div><!--右半部內容 結尾-->
+				</div>
+				
+				
+
+			</body>
+		</html>

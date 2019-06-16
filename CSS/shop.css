@@ -1,0 +1,618 @@
+.top-header{
+  border-bottom: solid 1px #eeeeee;
+}
+/*第一部分*/
+.S-1{
+	width:100%;height:450px;
+	float: left;
+	position: relative;
+	/*background-color: gray;*/
+}
+
+/*輪播*/
+.carousel .carousel-item {
+  width:100%;
+ /* height:0px;
+  padding-bottom:50%;*/
+  height: 100%;
+}
+
+.carousel .carousel-item img {
+  height: 330px;
+ /* min-height:330px;*/
+  /*max-height:970px;*/
+  object-fit:cover;
+  /*width:100%;height:0px;
+  padding-bottom:50%;*/
+  z-index:2;
+}
+
+div#carouselExampleIndicators	
+{
+	width: 80%;
+    height: 330px;
+    /* padding-bottom: 20%; */
+    /* height: 500px; */
+    margin: 100px auto;
+    overflow: hidden;
+    /*background: red;*/
+}
+.carousel-inner {
+    height: 330px;
+    background-color: #D8E6E7;
+  }
+.SS1photo{
+  width: 50%;
+  height: 300px;
+  /*background-color: red;*/
+  /*position: absolute;*/
+  position: relative;
+  margin-top: -320px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.SS1photo img{
+ height:100% !important;
+  object-fit: contain !important;
+}
+.S-22{
+  /*background-color: #D8E6E7;*/
+  width: 100%;
+  height: 350px;
+  float: left;
+}
+/*第二部分*/
+.S-2{
+	width:90%;height:auto;
+	float: left;
+	position: relative;
+	background-color: #D8E6E7;
+  left:55%;
+  transform:translateX(-50%);
+  margin-top: 50px;
+  animation: inop; /*動畫名稱*/
+  animation-duration: 0.5s;/*動畫時間*/
+  z-index: 3;
+}
+@keyframes inop { /*淡入動畫*/
+    0% {
+     opacity: 0;
+    }
+    100% {
+     opacity: 1;
+    }
+}
+.S2-T{
+  position: absolute;
+    /* background-color: red; */
+    font-size: 4vw;
+    margin-left: -90px;
+    margin-top: 50px;
+    color: #59616b;
+    text-align: center;
+    transform: rotate(-20deg);
+    letter-spacing: 10px;
+    font-weight: bold;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+.S2-T2{
+  /*display: inline-block;*/
+  font-size: 1.5vw;
+  margin-left: 10px;
+  font-weight: bold;
+}
+/*小輪播*/
+*{
+    box-sizing: border-box;
+}
+
+.slider {
+    width: 75%;
+    margin: 50px auto;
+}
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+	width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+    
+.slick-active {
+      opacity: 1;
+}
+
+.slick-current {
+    opacity: 1;
+}
+.sli-img{
+      width: 100% !important;
+      height: 100% !important;
+      border-style: solid;
+      border-width: 5px;
+      border-color: #FFFFFF;
+      overflow: hidden;
+}
+.sli-img img{
+      width: 100%;
+      max-height: 200px !important;
+}
+/*第三部分*/
+.S-3{
+	width:100%;height:auto;
+	float: left;
+	position: relative;
+	/*background-color: green;*/
+  margin-bottom: 100px;
+  animation: inop; /*動畫名稱*/
+  animation-duration: 0.5s;/*動畫時間*/
+  font-family:'Noto Sans Japanese',sans-serif;
+}
+.S32{
+  width: 91%;
+  height: 240px;
+  margin-top: -30px;
+  background-color: #f3f3f3;
+  position: absolute;
+  z-index: -1;
+}
+.S33{
+  width: 30%;
+  height: 10px;
+  background-color: #9DC3C1;
+  position: absolute;
+  margin-top:100px; 
+  margin-left: 10%;
+  display: inline-block;
+  font-family: 'Noto Sans Japanese', sans-serif;
+  z-index: 2;
+}
+.S3-T{
+ position: absolute;
+    /* background-color: red; */
+    font-size: 2vw;
+    width: 500px;
+    margin-left: 10px;
+    margin-top: -50px;
+    color: #59616b;
+    text-align: left;
+    letter-spacing: 10px;
+    font-weight: bold;
+}
+.S3-T2{
+  display: inline-block;
+    font-size: 1vw;
+    margin-left: 10px;
+    font-weight: bold;
+    display: inline-block;
+}
+.S3-mu{
+  width: auto;
+    height: 35px;
+    /*background-color: red;*/
+    position: absolute;
+    display: inline-block;
+    float: right;
+    right: 14%;
+    margin-top: 70px;
+}
+.S3-order{
+  width: 200px;
+  height: 35px;
+  background-color:#FFFFFF;
+  float: right;
+  border-style: solid;
+  border-width: 2px;
+  color: #77AAAD;
+  text-align: center;
+  font-size: 13px;
+  line-height: 30px;
+  cursor:pointer;
+  border-radius: 3px;
+   /*font-weight: bolder;*/
+}
+.S3-search{
+  width: 100px;
+  height: 35px;
+  background-color:#FFFFFF;
+  float: right;
+  border-style: solid;
+  border-width: 2px;
+  color:  #77AAAD;
+  text-align: center;
+  font-size: 13px;
+  line-height: 30px;
+  cursor:pointer;
+  border-radius: 3px;
+  margin-right: 20px;
+  /*font-weight: bolder;*/
+}
+.S3-search:hover,.S3-order:hover{
+    color:  #508285;
+}
+/* Dropdown button on hover & focus */
+.S3-order:hover, .S3-order:focus {
+  color:  #508285;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+.dropdown7 {
+  float: initial;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content2 {
+  display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    min-width: 120px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 51;
+    margin-top: 40px;
+    color: #59616b;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    right: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content2 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content2 a:hover {
+  background-color: #ddd;
+  text-decoration:none;
+  color: #59616b;
+}
+/* Change color of dropdown links on hover */
+/*.dropdown-content2 a:hover {background-color: #ddd}*/
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+.close-other{
+  width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 22%;
+    top: 30%;
+    z-index: 101;
+    display: none;
+    cursor: pointer;
+}
+.Sear{
+  width: 50%;
+  height: 200px;
+  /*background-color: red;*/
+  position: fixed;
+  z-index: 99;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  display: none;
+  animation: Sear; /*動畫名稱*/
+  animation-duration: 0.5s;/*動畫時間*/
+}
+@keyframes Sear { /*動畫*/
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.Sear-T{
+  font-size: 4vw;
+    letter-spacing: 8px;
+    text-align: center;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#Sear-inW{
+  border-radius: 50px;
+    border-width: 0px;
+    margin-top: 30px;
+    font-size: 22px;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+#Sear-sub{
+    width: 120px;
+    height: 50px;
+    border-radius: 50px;
+    border-width: 0px;
+    margin-top: -55px;
+    font-size: 1vw;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    background-color: #79a8a9;
+    color: #FFFFFF;
+    font-family: 'Noto Sans Japanese', sans-serif;
+}
+#Sear-sub:hover{
+  background-color:#2f6c6d;
+}
+button{
+  outline:none;/*去除點擊時的藍框*/
+}
+.S3-FX{
+  width: 78%;
+  height: auto;
+  /*background-color: pink;*/
+  margin:0 auto;
+  margin-top: 90px;
+  text-align: left;
+  
+}
+.good-box{
+  /*background-color: pink;*/
+  width: 240px;
+  height: 330px;
+  margin:0 25px; 
+  margin-top: 50px;
+  text-align: center;
+  color: #6E7783;
+  display: inline-block;
+}
+@media (max-width: 1520px) { 
+  .good-box{
+  width: 230px;
+  height: 320px;
+  }
+}
+@media (max-width: 1470px) { 
+  .S3-FX{
+  width: 760px;
+  }
+  .good-box{
+  width: 200px;
+  height: 300px;
+  }
+}
+@media (max-width: 750px) { 
+ .dropdown7{
+    display: none;
+ }
+}
+@media (max-width: 501px) { 
+  .S-2 {
+    width: 70%;
+    left: 65%;
+  }
+  .S2-T{
+    font-size: 10vw;
+  }
+  .S3-T{
+     margin-top: -40px;
+     font-size: 6vw;
+  }
+  .S3-T2{
+    font-size: 3vw;
+  }
+  .S3-FX{
+  width: 100%;
+  margin-top: 150px;
+  }
+  .good-box{
+  width: 42%;
+  height: 300px;
+  margin: 15px 3.7%;
+  }
+  .S-3{
+    overflow-x: hidden;
+  }
+  .S32{
+    width: 100%;
+    height: 160px;
+  }
+  .S33{
+    margin-top: 45px;
+    margin-left: 0;
+    width: 60%;
+    height: 5px;
+  }
+  .dropdown1 {
+    float: left;
+  }
+  .dropdown2 {
+    /*left: 20px;*/
+    right: 20px;
+    margin-top: 0px;
+  }
+  .dropdown7 {
+    /*left: 20px;*/
+    right: 20px;
+    margin-top: 105px;
+    display: none;
+  }
+  .S3-search{
+    float: left;
+    margin-left: 20px;
+  }
+  .S3-mu {
+    width: 100%;
+    height: 35px;
+    display: inline-block;
+    position: relative;
+    margin-top: 70px;
+    right: 0;
+  }
+  .Sear{
+    top:40%;
+    width: 90%;
+  }
+  .Sear-T{
+     font-size: 11vw;
+  }
+  .close-other{
+    top: 15%;
+  }
+  #Sear-sub
+  {
+   margin-top: 20px;
+    font-size: 4vw;
+    left: 30%;
+    width: auto;
+  }
+}
+.good-box-left{
+  /*margin-left: 50px;---------------------------*/
+}
+.good-BG{
+  width: 100%;
+  height: 0px;
+  padding-bottom: 100%;
+  position: absolute;
+  pointer-events: none;
+}
+.good-img{
+  width: 100%;
+  height: 0px;
+  padding-bottom: 100%;
+   overflow: hidden;
+  /*background-color: blue;*/
+  -moz-box-shadow:4px 4px 12px 4px rgba(20%,20%,40%,0.5);
+  -webkit-box-shadow:4px 4px 12px 4px rgba(20%,20%,40%,0.5);
+  box-shadow:4px 4px 12px 4px rgba(20%,20%,40%,0.5);
+  position: relative;
+  z-index: 49;
+  cursor: pointer;
+}
+.good-img img{
+  width: 100%;
+  max-height: 280px;
+  /*min-height: 240px;*/
+}
+.good-img:hover .good-BG{
+  cursor: pointer;
+  opacity: 0.3;
+  background-color: #000000;
+
+}
+.good-T{
+  width: 100%;
+  margin-top: 17px;
+  font-size: 17px;
+  text-align: center;
+}
+.good-T2{
+  width: 100%;
+  margin-top: 3px;
+  font-size: 12px;
+  text-align: center;
+}
+.good-Money{
+  width: auto;
+  margin-top: 3px;
+  font-size: 18px;
+  text-align: center;
+  color: #77AAAD;
+  display: inline-block;
+  /*background-color:red; */
+}
+.good-Money2{
+  width: auto;
+  margin-top: 0px;
+  font-size: 15px;
+  text-align: center;
+  color: #9DC3C1;
+  display: inline-block;
+  /*background-color:red; */
+}
+.good-S-Money{
+  width: auto;
+  margin-top: 3px;
+  font-size: 18px;
+  text-align: center;
+  color: #77AAAD;
+  display: inline-block;
+}
+.good-bnt{
+  width: 50%;
+  height: 40px;
+  background-color: #D8E6E7;
+  position: relative;
+  margin:0 auto; 
+  z-index: 50;
+  border-radius: 20px;
+  margin-top: 0px;
+  transition:margin-top 0.2s linear;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  color: #6E7783;
+  /*display: inline-block;*/
+  overflow: hidden;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.good-img:hover .good-bnt{
+   display: inherit;
+   margin-top: -55%;
+   cursor: pointer;
+   transition:margin-top 0.2s linear;
+}
+.good-bnt span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.good-bnt span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.good-bnt:hover span {
+  padding-right: 25px;
+}
+
+.good-bnt:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+.fot{
+  width: 100%;
+  height: 200px;
+  background-color: #77AAAD;
+  float: left;
+  position: relative;
+}
+@media (max-width: 501px) { 
+  .fot-W,.fot-W2{
+    font-size: 3vw;
+  }
+}
